@@ -1,0 +1,222 @@
+[
+  {
+    "isUse": 2,
+    "isRequired": true,
+    "isReadonly": false,
+    "subData": {
+      "type": 1,
+      "uuid": "896733b7345113413338ec03823cc3b0",
+      "value": []
+    },
+    "id": 24216,
+    "label": "姓名",
+    "placeholder": "请填写",
+    "type": 1,
+    "properties": {
+      "isUse": 2,
+      "hasEditPermission": true,
+      "isEffectFlowNode": false,
+      "biz": "baseInfo",
+      "bizModuleId": 1,
+      "bizAttrId": 893,
+      "bizFieldName": "realname",
+      "labelAlias": "入职员工姓名",
+      "bizModelId": 144,
+      "uuid": "896733b7345113413338ec03823cc3b0"
+    }
+  },
+  {
+    "isUse": 1,
+    "isRequired": true,
+    "isReadonly": false,
+    "subData": {
+      "type": 5,
+      "uuid": "0f678f493cc1e3472e3a55b3093d3854",
+      "value": []
+    },
+    "id": 24217,
+    "label": "首次参加工作时间",
+    "placeholder": "请填写",
+    "type": 5,
+    "properties": {
+      "isUse": 1,
+      "hasEditPermission": true,
+      "isEffectFlowNode": false,
+      "biz": "baseInfo",
+      "bizModuleId": 1,
+      "bizAttrId": 898,
+      "bizFieldName": "begin_work_time",
+      "format": "yyyy-MM-dd",
+      "labelAlias": "",
+      "bizModelId": 144,
+      "uuid": "0f678f493cc1e3472e3a55b3093d3854"
+    }
+  },
+  {
+    "isUse": 1,
+    "isRequired": true,
+    "isReadonly": false,
+    "subData": {
+      "type": 3,
+      "uuid": "3de2f37aca0b2c4a32c8fbcc5a128b69",
+      "value": []
+    },
+    "id": 24218,
+    "label": "性别",
+    "placeholder": "请填写",
+    "type": 3,
+    "properties": {
+      "isUse": 1,
+      "hasEditPermission": true,
+      "isEffectFlowNode": false,
+      "biz": "baseInfo",
+      "bizModuleId": 1,
+      "bizAttrId": 899,
+      "bizFieldName": "gender",
+      "options": [
+        "男",
+        "女"
+      ],
+      "labelAlias": "",
+      "bizModelId": 144,
+      "uuid": "3de2f37aca0b2c4a32c8fbcc5a128b69"
+    }
+  },
+  {
+    "isUse": 1,
+    "isRequired": true,
+    "isReadonly": false,
+    "subData": {
+      "type": 16,
+      "uuid": "976a77a88b71b84f3188f348abe77bcb",
+      "value": []
+    },
+    "id": 24219,
+    "label": "证件号码",
+    "placeholder": "请填写",
+    "type": 16,
+    "properties": {
+      "isUse": 1,
+      "hasEditPermission": true,
+      "isEffectFlowNode": false,
+      "biz": "baseInfo",
+      "bizModuleId": 1,
+      "bizAttrId": 894,
+      "bizFieldName": "id_no",
+      "options": [
+        {
+          "ref": "id_type",
+          "name": "id_type",
+          "label": "证件类型",
+          "value": [
+            {
+              "display": "身份证",
+              "value": 1
+            },
+            {
+              "display": "护照",
+              "value": 2
+            },
+            {
+              "display": "港澳来往内地通行证",
+              "value": 3
+            },
+            {
+              "display": "台湾来往内地通行证",
+              "value": 4
+            }
+          ]
+        }
+      ],
+      "labelAlias": "",
+      "bizModelId": 144,
+      "uuid": "976a77a88b71b84f3188f348abe77bcb"
+    }
+  },
+  {
+    "isUse": 1,
+    "isRequired": true,
+    "isReadonly": false,
+    "subData": {
+      "type": 5,
+      "uuid": "f748f689ffe9bf4ffbfab48fbac072c8",
+      "value": []
+    },
+    "id": 24220,
+    "label": "出生日期",
+    "placeholder": "请填写",
+    "type": 5,
+    "properties": {
+      "isUse": 1,
+      "hasEditPermission": true,
+      "isEffectFlowNode": false,
+      "biz": "baseInfo",
+      "bizModuleId": 1,
+      "bizAttrId": 895,
+      "bizFieldName": "birthday",
+      "format": "yyyy-MM-dd",
+      "labelAlias": "",
+      "bizModelId": 144,
+      "uuid": "f748f689ffe9bf4ffbfab48fbac072c8"
+    }
+  },
+  {
+    "isUse": 2,
+    "isRequired": true,
+    "isReadonly": false,
+    "subData": {
+      "type": 15,
+      "uuid": "d0f8264c7ca9f74d387a44274febe950",
+      "value": []
+    },
+    "id": 24221,
+    "label": "个人电话",
+    "placeholder": "请填写",
+    "type": 15,
+    "properties": {
+      "isUse": 2,
+      "hasEditPermission": true,
+      "isEffectFlowNode": false,
+      "biz": "contact",
+      "bizModuleId": 1,
+      "bizAttrId": 900,
+      "bizFieldName": "telephone",
+      "options": [
+        {
+          "ref": "phone_code",
+          "name": "country_code",
+          "label": "区号"
+        }
+      ],
+      "labelAlias": "",
+      "bizModelId": 145,
+      "uuid": "d0f8264c7ca9f74d387a44274febe950"
+    }
+  },
+  {
+    "isUse": 1,
+    "isRequired": true,
+    "isReadonly": false,
+    "subData": {
+      "type": 1,
+      "uuid": "8f8c2446952c39449c98ee490c27589f",
+      "value": []
+    },
+    "id": 24222,
+    "label": "公司邮箱",
+    "placeholder": "请填写",
+    "type": 1,
+    "properties": {
+      "isUse": 1,
+      "hasEditPermission": true,
+      "isEffectFlowNode": false,
+      "biz": "contact",
+      "bizModuleId": 1,
+      "bizAttrId": 903,
+      "bizFieldName": "office_email",
+      "labelAlias": "",
+      "bizModelId": 145,
+      "uuid": "8f8c2446952c39449c98ee490c27589f"
+    }
+  }
+]
