@@ -7,3 +7,12 @@
 .form_item {
   margin-bottom: 5px;
 }
+
+.form_item label {
+  word-wrap: break-word;
+  white-space: normal;
+  line-height: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+
