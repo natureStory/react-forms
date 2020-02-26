@@ -1,0 +1,9 @@
+.form_content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form_item {
+  margin-bottom: 5px;
+}

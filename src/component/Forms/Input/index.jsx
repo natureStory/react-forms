@@ -1,18 +1,12 @@
 import React from "react";
 
-import { Form, Input } from 'antd';
+import { Input } from 'antd';
 
-export default function ({data, value, disabled, formItemLayout = {}, onChange}) {
+export default function ({data, placeholder, value, disabled, onChange}) {
     const change = (e) => {
-        onChange(data, e.target.value);
+        onChange(e.target.value, data);
     };
     return (
-        <Form.Item
-            {...formItemLayout}
-            label={data.label}
-            required={data.isRequired}
-        >
-            <Input placeholder={data.placeholder} disabled={disabled} value={value} onChange={change} />
-        </Form.Item>
+        <Input placeholder={placeholder} disabled={disabled} value={value} onChange={change} />
     );
 }

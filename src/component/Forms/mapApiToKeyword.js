@@ -1,30 +1,30 @@
 const maps = {
     1: {
-        defaultValue: 'input',  // 默认类型
+        defaultValue: 'Input',  // 默认类型
         exactValue: {           // 精细化类型
-            "office_email": 'e-mailInput'
+            "office_email": 'E-mailInput'
         }
     },
     3: {
-        defaultValue: 'select',
+        defaultValue: 'Select',
         exactValue: {
 
         }
     },
     5: {
-        defaultValue: 'input',
+        defaultValue: 'Input',
         exactValue: {
 
         }
     },
     15: {
-        defaultValue: 'input',
+        defaultValue: 'Input',
         exactValue: {
-
+            "telephone": 'NumberInput'
         }
     },
     16: {
-        defaultValue: 'input',
+        defaultValue: 'Input',
         exactValue: {
 
         }

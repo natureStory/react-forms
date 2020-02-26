@@ -1,29 +1,23 @@
 import React from "react";
 
-import { Form, Select } from 'antd';
+import { Select } from 'antd';
 
-export default function ({data, disabled, formItemLayout = {}, onChange}) {
+export default function ({data, placeholder, disabled, onChange}) {
     const change = (value) => {
-        onChange(data, value);
+        onChange(value, data);
     };
     return (
-        <Form.Item
-            {...formItemLayout}
-            label={data.label}
-            required={data.isRequired}
+        <Select
+            placeholder={placeholder}
+            disabled={disabled}
+            style={{width: '100%'}}
+            onChange={change}
         >
-            <Select
-                placeholder={data.placeholder}
-                disabled={disabled}
-                style={{width: '100%'}}
-                onChange={change}
-            >
-                {
-                    data.properties.options.map(item => (
-                        <Select.Option value={item} key={item}>{item}</Select.Option>
-                    ))
-                }
-            </Select>
-        </Form.Item>
+            {
+                (data?.properties?.options || data?.values).map(item => (
+                    <Select.Option value={item} key={item}>{item}</Select.Option>
+                ))
+            }
+        </Select>
     );
 }

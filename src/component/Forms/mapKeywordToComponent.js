@@ -1,9 +1,11 @@
 import Input from './Input';
 import EmailInput from './Input/emailInput';
+import NumberInput from './Input/numberInput';
 import Select from './Select';
 
 export default {
-    'input': Input,
-    'e-mailInput': EmailInput,
-    'select': Select
+    'Input': Input,
+    'E-mailInput': EmailInput,
+    'NumberInput': NumberInput,
+    'Select': Select
 };
