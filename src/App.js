@@ -3,8 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import 'antd/dist/antd.css';
 
-import data from './data.json';
+// import data from './data.json';
 // import data from './data2.json';
+// import data from './data3.json';
+import data from './data4.json';
 
 import Forms from './component/Forms';
 
@@ -28,7 +30,7 @@ function App() {
             <Forms
                 getForm={form => formRef = form}    // 非受控模式，用于表单校验、取值
                 // bindFieldNames={'id'}    // 表单绑定的 唯一id/字段名， 例子：bindFieldNames={'properties.bizFieldName'} 就是取每项的 item.properties.bizFieldName
-                columns={4}
+                columns={2}
                 style={{width: 800}}
                 // formItemStyle={{width: 200}}
                 // formItemLayout={{

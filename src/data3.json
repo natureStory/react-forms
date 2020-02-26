@@ -1,0 +1,321 @@
+[
+  {
+    "id": 893,
+    "fieldName": "realname",
+    "type": 1,
+    "label": "姓名",
+    "options": "",
+    "value": [
+      "李四"
+    ],
+    "obIsRequired": 0,
+    "obIsCanModify": true,
+    "tips": null,
+    "obLaunchRequired": 2,
+    "obTaskRequired": 0,
+    "isChecked": true
+  },
+  {
+    "id": 924,
+    "fieldName": "employee_no",
+    "type": 1,
+    "label": "工号",
+    "options": "",
+    "value": [
+      "1"
+    ],
+    "obIsRequired": 0,
+    "obIsCanModify": true,
+    "tips": null,
+    "obLaunchRequired": 0,
+    "obTaskRequired": 0,
+    "isChecked": true
+  },
+  {
+    "id": 932,
+    "fieldName": "on_boarding_date",
+    "type": 2,
+    "label": "入职日期",
+    "options": "",
+    "value": [
+      1561564800000
+    ],
+    "obIsRequired": 0,
+    "obIsCanModify": true,
+    "tips": null,
+    "obLaunchRequired": 2,
+    "obTaskRequired": 0,
+    "isChecked": true
+  },
+  {
+    "id": 1,
+    "fieldName": "on_boarding_plan",
+    "type": 5,
+    "label": "入职计划",
+    "options": null,
+    "value": [
+      {
+        "id": 16,
+        "name": "新计划B"
+      }
+    ],
+    "obIsRequired": 0,
+    "obIsCanModify": true,
+    "tips": null,
+    "obLaunchRequired": 2,
+    "obTaskRequired": 0,
+    "isChecked": true
+  },
+  {
+    "id": 0,
+    "fieldName": "on_boarding_location",
+    "type": 1,
+    "label": "入职地点",
+    "options": null,
+    "value": [
+      "高蛋白地方"
+    ],
+    "obIsRequired": 0,
+    "obIsCanModify": true,
+    "tips": null,
+    "obLaunchRequired": 2,
+    "obTaskRequired": 0,
+    "isChecked": true
+  },
+  {
+    "id": 902,
+    "fieldName": "personal_email",
+    "type": 1,
+    "label": "个人邮箱",
+    "options": "",
+    "value": [
+      "hanye@mokahr.com"
+    ],
+    "obIsRequired": 0,
+    "obIsCanModify": true,
+    "tips": null,
+    "obLaunchRequired": 2,
+    "obTaskRequired": 0,
+    "isChecked": true
+  },
+  {
+    "id": 900,
+    "fieldName": "telephone",
+    "type": 7,
+    "label": "个人电话",
+    "options": "[{\"label\":\"区号\",\"name\":\"country_code\",\"value\":[{\"value\":\"+86\",\"display\":\"+86\"},{\"value\":\"+852\",\"display\":\"+852\"},{\"value\":\"+853\",\"display\":\"+853\"},{\"value\":\"+886\",\"display\":\"+886\"},{\"value\":\"+1\",\"display\":\"+1\"}],\"ref\":\"\"}]",
+    "value": [
+      {
+        "value": "18513123810",
+        "country_code": "+86"
+      }
+    ],
+    "obIsRequired": 0,
+    "obIsCanModify": true,
+    "tips": null,
+    "obLaunchRequired": 2,
+    "obTaskRequired": 0,
+    "isChecked": true
+  },
+  {
+    "id": 925,
+    "fieldName": "employee_type",
+    "type": 5,
+    "label": "员工类型",
+    "options": "[{\"id\":1,\"name\":\"正式\"},{\"id\":2,\"name\":\"实习生\"},{\"id\":3,\"name\":\"劳务派遣\"},{\"id\":4,\"name\":\"兼职\"}]",
+    "value": [
+      {
+        "id": 3,
+        "name": "劳务派遣"
+      }
+    ],
+    "obIsRequired": 0,
+    "obIsCanModify": true,
+    "tips": null,
+    "obLaunchRequired": 0,
+    "obTaskRequired": 0,
+    "isChecked": true
+  },
+  {
+    "id": 926,
+    "fieldName": "department",
+    "type": 12,
+    "label": "部门",
+    "options": "",
+    "value": [
+      {
+        "name": "Moka",
+        "id": "324"
+      }
+    ],
+    "obIsRequired": 0,
+    "obIsCanModify": true,
+    "tips": null,
+    "obLaunchRequired": 2,
+    "obTaskRequired": 0,
+    "isChecked": true
+  },
+  {
+    "id": 927,
+    "fieldName": "duty",
+    "type": 13,
+    "label": "职务",
+    "options": "",
+    "value": [
+      {
+        "id": 8,
+        "name": "架构师"
+      }
+    ],
+    "obIsRequired": 0,
+    "obIsCanModify": true,
+    "tips": null,
+    "obLaunchRequired": 0,
+    "obTaskRequired": 0,
+    "isChecked": true
+  },
+  {
+    "id": 928,
+    "fieldName": "duty_level",
+    "type": 15,
+    "label": "职级",
+    "options": "",
+    "value": [
+      {
+        "id": 5,
+        "name": "P33"
+      }
+    ],
+    "obIsRequired": 0,
+    "obIsCanModify": true,
+    "tips": null,
+    "obLaunchRequired": 0,
+    "obTaskRequired": 0,
+    "isChecked": true
+  },
+  {
+    "id": 930,
+    "fieldName": "report_leader",
+    "type": 17,
+    "label": "直接上级",
+    "options": "",
+    "value": [
+      {
+        "id": 375,
+        "name": "邵华"
+      }
+    ],
+    "obIsRequired": 0,
+    "obIsCanModify": true,
+    "tips": null,
+    "obLaunchRequired": 2,
+    "obTaskRequired": 0,
+    "isChecked": true
+  },
+  {
+    "id": 1238,
+    "fieldName": "contract_type",
+    "type": 5,
+    "label": "合同类型",
+    "options": "[{\"id\":1,\"name\":\"劳动合同\"},{\"id\":2,\"name\":\"劳务合同\"},{\"id\":3,\"name\":\"实习协议\"},{\"id\":4,\"name\":\"其他\"}]",
+    "value": [
+      {
+        "id": 3,
+        "name": "实习协议"
+      }
+    ],
+    "obIsRequired": 0,
+    "obIsCanModify": true,
+    "tips": null,
+    "obLaunchRequired": 0,
+    "obTaskRequired": 0,
+    "isChecked": true
+  },
+  {
+    "id": 1237,
+    "fieldName": "corporation",
+    "type": 21,
+    "label": "法人公司",
+    "options": "",
+    "value": [
+      {
+        "id": 3694,
+        "name": "hhh"
+      }
+    ],
+    "obIsRequired": 0,
+    "obIsCanModify": true,
+    "tips": null,
+    "obLaunchRequired": 0,
+    "obTaskRequired": 0,
+    "isChecked": true
+  },
+  {
+    "id": 1240,
+    "fieldName": "contract_limit",
+    "type": 5,
+    "label": "合同期限",
+    "options": "[{\"id\":1,\"name\":\"1个月\"},{\"id\":2,\"name\":\"2个月\"},{\"id\":3,\"name\":\"3个月\"},{\"id\":4,\"name\":\"6个月\"},{\"id\":5,\"name\":\"12个月\"},{\"id\":6,\"name\":\"24个月\"},{\"id\":7,\"name\":\"36个月\"},{\"id\":8,\"name\":\"60个月\"},{\"id\":9,\"name\":\"无固定期限\"}]",
+    "value": [
+      {
+        "id": 1,
+        "name": "1个月"
+      }
+    ],
+    "obIsRequired": 0,
+    "obIsCanModify": true,
+    "tips": null,
+    "obLaunchRequired": 0,
+    "obTaskRequired": 0,
+    "isChecked": true
+  },
+  {
+    "id": 1243,
+    "fieldName": "estimate_end_date",
+    "type": 2,
+    "label": "预计终止日期",
+    "options": "",
+    "value": [
+      1564099200000
+    ],
+    "obIsRequired": 0,
+    "obIsCanModify": true,
+    "tips": null,
+    "obLaunchRequired": 0,
+    "obTaskRequired": 0,
+    "isChecked": true
+  },
+  {
+    "id": 937,
+    "fieldName": "months_of_probation",
+    "type": 5,
+    "label": "试用期月数",
+    "options": "[{\"id\":1,\"name\":\"0\"},{\"id\":2,\"name\":\"1\"},{\"id\":3,\"name\":\"2\"},{\"id\":4,\"name\":\"3\"},{\"id\":5,\"name\":\"4\"},{\"id\":6,\"name\":\"5\"},{\"id\":7,\"name\":\"6\"}]",
+    "value": [
+      {
+        "id": 1,
+        "name": "0"
+      }
+    ],
+    "obIsRequired": 0,
+    "obIsCanModify": true,
+    "tips": null,
+    "obLaunchRequired": 0,
+    "obTaskRequired": 0,
+    "isChecked": true
+  },
+  {
+    "id": 938,
+    "fieldName": "period_end_date",
+    "type": 2,
+    "label": "试用截止日期",
+    "options": "",
+    "value": [],
+    "obIsRequired": 0,
+    "obIsCanModify": true,
+    "tips": null,
+    "obLaunchRequired": 2,
+    "obTaskRequired": 0,
+    "isChecked": true
+  }
+]

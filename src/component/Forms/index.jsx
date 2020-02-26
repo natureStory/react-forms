@@ -68,25 +68,31 @@ function MapApiToForms({
     return fieldsData.map((item, index) => {
         const baseFieldName = getBaseFieldName(item, bindFieldNames);
 
+        // todo: 需要确定的点，字段不统一
+        const required = item?.required || item?.isRequired || item?.obLaunchRequired;
+        // todo: 需要确定的点，字段不统一
+        const placeholder = item?.placeholder || item?.tips || '请输入';
+        const hide = new Set(newHiddenFormItems).has(baseFieldName);
+        // todo: 需要确定的点，字段不统一
+        const disabled = item?.isReadonly || !item?.isCanModify || new Set(newDisabledFormItems).has(baseFieldName);
+        const width = `${100/columns}%`;
+
         let componentName = mapApiToKeyword(item.type, baseFieldName);     // mapApiToKeyword，映射后端表单类型到表单组件名
         const Component = mapKeywordToComponent[componentName] || (() => null);     // mapKeywordToComponent，映射表单组件名到组件
         const ComponentParams = {       // 组件公共参数
             relationListeners: listenersConfig,   // 事件仍然往下传递，onblur、onClick 等则需要自己在组件里写
-            placeholder: item?.placeholder,
+            placeholder: placeholder,
             onChange: change,
             data: item,
             key: index,
-            disabled: item?.isReadonly || new Set(newDisabledFormItems).has(baseFieldName)
+            disabled
         };
-
-        const hide = new Set(newHiddenFormItems).has(baseFieldName);
-        const width = `${100/columns}%`;
 
         return (
             !hide ? <Form.Item
                 {...(formItemLayout || defaultFormItemLayout)}
                 label={item.label}
-                required={item.isRequired}
+                required={required}
                 key={baseFieldName}
                 className="form_item"
                 style={{flex: 1, width, minWidth: width, maxWidth: width, ...formItemStyle}}
@@ -99,10 +105,10 @@ function MapApiToForms({
                 ) : getFieldDecorator(baseFieldName, {
                     rules: [
                         {
-                            required: item?.isRequired,
-                            message: item?.placeholder,
+                            required: required,
+                            message: placeholder,
                         },
-                        ...selfRulesConfig.filter(item => item.fieldName === baseFieldName)
+                        ...selfRulesConfig.filter(rule => rule.fieldName === baseFieldName)
                     ],
                 })(
                     <Component
