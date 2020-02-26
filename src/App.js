@@ -26,9 +26,9 @@ function App() {
             <p>3. 填写证件号码禁用生日，自动填写</p>
             <p>4. 提交显示表单数据</p>
             <Forms
-                getForm={form => formRef = form}    // 获取表单，用于取值
+                getForm={form => formRef = form}    // 非受控模式，用于表单校验、取值
                 // bindFieldNames={'id'}    // 表单绑定的 唯一id/字段名， 例子：bindFieldNames={'properties.bizFieldName'} 就是取每项的 item.properties.bizFieldName
-                columns={2}
+                columns={4}
                 style={{width: 800}}
                 // formItemStyle={{width: 200}}
                 // formItemLayout={{
@@ -85,9 +85,9 @@ function App() {
                 ]}
                 extra={{
                     realname: <span style={{color: 'purple'}}>你好</span>,
-                    // begin_work_time: <span style={{color: 'green'}}>不好</span>,
+                    begin_work_time: <span style={{color: 'green'}}>不好</span>,
                     gender: <span style={{color: 'purple'}}>你很好</span>,
-                    // id_no: <span style={{color: 'green'}}>我不好</span>,
+                    id_no: <span style={{color: 'green'}}>我不好</span>,
                 }}
                 // 作为特殊情况下的备用，请勿过度依赖，使用 listenersConfig 定义 hide、disable 更合适
                 // values={values}             // 存在 values，则为受控模式，必须配合 onChange 使用
@@ -97,6 +97,12 @@ function App() {
             />
             <p>{JSON.stringify(values)}</p>
             <button onClick={() => {
+                formRef.resetFields();
+                formRef.setFieldsValue({realname: 123, birthday: '2020年 1 月 1 日'});
+            }}>
+                赋值
+            </button>
+            <button onClick={() => {
                 if (Object.values(values).length > 0) {
                     console.log(values);
                 } else {
@@ -105,7 +111,6 @@ function App() {
                             alert('校验通过，提交了');
                         }
                     });
-                    // formRef.setFieldsValue({realname: 123, birthday: '2020年 1 月 1 日'});
                 }
             }}>提交</button>
         </div>

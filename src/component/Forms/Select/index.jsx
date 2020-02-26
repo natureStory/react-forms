@@ -2,7 +2,7 @@ import React from "react";
 
 import { Select } from 'antd';
 
-export default function ({data, placeholder, disabled, onChange}) {
+export default function ({data, placeholder, value, disabled, onChange}) {
     const change = (value) => {
         onChange(value, data);
     };
@@ -12,6 +12,7 @@ export default function ({data, placeholder, disabled, onChange}) {
             disabled={disabled}
             style={{width: '100%'}}
             onChange={change}
+            value={value}
         >
             {
                 (data?.properties?.options || data?.values).map(item => (
