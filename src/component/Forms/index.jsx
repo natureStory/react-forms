@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Form} from 'antd';
 import mapApiToKeyword from './mapApiToKeyword';
+import mapApiToText from './mapApiToText';
 import mapKeywordToComponent from './mapKeywordToComponent';
 
 import './index.css';
@@ -21,7 +22,22 @@ const getBaseFieldName = (item, bindFieldNames) => {
         return `${bindFieldNames.split('.').reduce((total, item) => total[item] || {}, item)}`;
     }
 };
-let newDisabledFormItems = [], newHiddenFormItems = [];
+const renderFormItem = (item, editStatus, values, baseFieldName, Component, ComponentParams, getFieldDecorator, required, placeholder, selfRulesConfig) => {
+    if (!editStatus) {      // 非编辑状态
+        return (
+            // todo: values 的 取值方式
+            <div>{mapApiToText({type: item.type, unit: '', value: [(values || {})[baseFieldName]], ...item})}</div>
+        );
+    } else {
+        return values ? (
+            <Component value={values[baseFieldName]} {...ComponentParams}/>
+        ) : getFieldDecorator(baseFieldName, {
+            rules: [
+                {required: required, message: placeholder},
+                ...selfRulesConfig.filter(rule => rule.fieldName === baseFieldName)
+            ],
+        })(<Component {...ComponentParams}/>)}
+};
 
 function MapApiToForms({
                            form = {},
@@ -42,6 +58,8 @@ function MapApiToForms({
                        }) {
     getForm(form);
     const {getFieldDecorator, getFieldsValue} = form;
+    const [newDisabledFormItems, setNewDisabledFormItems] = useState([]);
+    const [newHiddenFormItems, setNewHiddenFormItems] = useState([]);
 
     const change = (value, fieldsDataItem, ...restProps) => {
         const baseFieldName = getBaseFieldName(fieldsDataItem, bindFieldNames);
@@ -53,17 +71,14 @@ function MapApiToForms({
             fieldsValues[baseFieldName] = value;
             const result = item.handleCallback(...item.handleParams.map(param => fieldsValues[param])) || [];
             if (item?.handleType === "disable") {
-                newDisabledFormItems = [...result];
+                setNewDisabledFormItems([...result]);
             } else if (item?.handleType === "hide") {
-                newHiddenFormItems = [...result];
+                setNewHiddenFormItems([...result]);
             }
         });
 
         onChange(fieldsDataItem, value, restProps);
     };
-
-    newDisabledFormItems = [...disabledFormItems, ...newDisabledFormItems];
-    newHiddenFormItems = [...hiddenFormItems, ...newHiddenFormItems];
 
     return fieldsData.map((item, index) => {
         const baseFieldName = getBaseFieldName(item, bindFieldNames);
@@ -72,9 +87,9 @@ function MapApiToForms({
         const required = item?.required || item?.isRequired || item?.obLaunchRequired;
         // todo: 需要确定的点，字段不统一
         const placeholder = item?.placeholder || item?.tips || '请输入';
-        const hide = new Set(newHiddenFormItems).has(baseFieldName);
+        const hide = new Set([...hiddenFormItems, ...newHiddenFormItems]).has(baseFieldName);
         // todo: 需要确定的点，字段不统一
-        const disabled = item?.isReadonly || !item?.isCanModify || new Set(newDisabledFormItems).has(baseFieldName);
+        const disabled = item?.isReadonly || (item?.isCanModify !== undefined && !item?.isCanModify) || new Set([...disabledFormItems, ...newDisabledFormItems]).has(baseFieldName);
         const width = `${100/columns}%`;
 
         let componentName = mapApiToKeyword(item.type, baseFieldName);     // mapApiToKeyword，映射后端表单类型到表单组件名
@@ -89,34 +104,19 @@ function MapApiToForms({
         };
 
         return (
-            !hide ? <Form.Item
-                {...(formItemLayout || defaultFormItemLayout)}
-                label={item.label}
-                required={required}
-                key={baseFieldName}
-                className="form_item"
-                style={{flex: 1, width, minWidth: width, maxWidth: width, ...formItemStyle}}
-            >
-                {values ? (
-                    <Component
-                        value={values[baseFieldName]}
-                        {...ComponentParams}
-                    />
-                ) : getFieldDecorator(baseFieldName, {
-                    rules: [
-                        {
-                            required: required,
-                            message: placeholder,
-                        },
-                        ...selfRulesConfig.filter(rule => rule.fieldName === baseFieldName)
-                    ],
-                })(
-                    <Component
-                        {...ComponentParams}
-                    />
-                )}
-                {extra[baseFieldName]}
-            </Form.Item> : null
+            !hide ? (
+                <Form.Item
+                    {...(formItemLayout || defaultFormItemLayout)}
+                    label={item.label}
+                    required={required}
+                    key={baseFieldName}
+                    className="form_item"
+                    style={{flex: 1, width, minWidth: width, maxWidth: width, ...formItemStyle}}
+                >
+                    {renderFormItem(item, editStatus, values, baseFieldName, Component, ComponentParams, getFieldDecorator, required, placeholder, selfRulesConfig)}
+                    {extra[baseFieldName]}
+                </Form.Item>
+            ) : null
         );
     });
 }

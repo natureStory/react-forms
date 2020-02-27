@@ -37,7 +37,7 @@
     "id": 24217,
     "label": "首次参加工作时间",
     "placeholder": "请填写",
-    "type": 5,
+    "type": 2,
     "properties": {
       "isUse": 1,
       "hasEditPermission": true,
@@ -145,7 +145,7 @@
     "id": 24220,
     "label": "出生日期",
     "placeholder": "请填写",
-    "type": 5,
+    "type": 2,
     "properties": {
       "isUse": 1,
       "hasEditPermission": true,
@@ -172,7 +172,7 @@
     "id": 24221,
     "label": "个人电话",
     "placeholder": "请填写",
-    "type": 15,
+    "type": 1,
     "properties": {
       "isUse": 2,
       "hasEditPermission": true,

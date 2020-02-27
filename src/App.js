@@ -1,18 +1,18 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import 'antd/dist/antd.css';
 
-// import data from './data.json';
+import data from './data.json';
 // import data from './data2.json';
 // import data from './data3.json';
-import data from './data4.json';
+// import data from './data4.json';
 
 import Forms from './component/Forms';
 
 function App() {
     let formRef;
     const [values, setValues] = useState({});
+    const [editStatus, setEditStatus] = useState(true);
 
     function onChange(fieldsDataItem, value) {
         console.log(fieldsDataItem, value);
@@ -31,7 +31,7 @@ function App() {
                 getForm={form => formRef = form}    // 非受控模式，用于表单校验、取值
                 // bindFieldNames={'id'}    // 表单绑定的 唯一id/字段名， 例子：bindFieldNames={'properties.bizFieldName'} 就是取每项的 item.properties.bizFieldName
                 columns={2}
-                style={{width: 600}}
+                style={{width: 800}}
                 // formItemStyle={{width: 200}}
                 // formItemLayout={{
                 //     labelCol: {
@@ -42,7 +42,7 @@ function App() {
                 //     }
                 // }}
                 fieldsData={data}   // 接口表单数据
-                // editStatus={true}   // 默认编辑状态
+                editStatus={editStatus}   // 默认编辑状态
                 listenersConfig={[  // onchange 事件可自动处理，其余自定义事件将被传至表单组件，请自行处理
                     {handleEvent: 'onchange', handleParams: ['realname', 'id_no'], handleCallback: (realname, id_no) => {
                             fetch('http://localhost:3000/').then(data => console.log(data));
@@ -86,13 +86,13 @@ function App() {
                     },
                 ]}
                 extra={{
-                    realname: <span style={{color: 'purple'}}>你好</span>,
-                    begin_work_time: <span style={{color: 'green'}}>不好</span>,
-                    gender: <span style={{color: 'purple'}}>你很好</span>,
-                    id_no: <span style={{color: 'green'}}>我不好</span>,
+                    realname: <div style={{color: 'purple'}}>你好</div>,
+                    begin_work_time: <div style={{color: 'green'}}>不好</div>,
+                    gender: <div style={{color: 'purple'}}>你很好</div>,
+                    id_no: <div style={{color: 'green'}}>我不好</div>,
                 }}
                 // 作为特殊情况下的备用，请勿过度依赖，使用 listenersConfig 定义 hide、disable 更合适
-                // values={values}             // 存在 values，则为受控模式，必须配合 onChange 使用
+                // values={values}             // 存在 values，则为受控模式
                 // onChange={onChange}     // 非受控模式下不建议使用
                 // hiddenFormItems={['gender']}       // 隐藏表单字段集合，例如：['gender']
                 // disabledFormItems={['begin_work_time']}       // 禁用表单字段集合，例如：['gender']
@@ -115,6 +115,11 @@ function App() {
                     });
                 }
             }}>提交</button>
+            <button onClick={() => {
+                setValues(formRef.getFieldsValue());
+                setEditStatus(!editStatus);
+            }}
+            >编辑保存</button>
         </div>
     );
 }

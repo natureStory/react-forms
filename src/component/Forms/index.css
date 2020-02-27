@@ -16,3 +16,18 @@
   vertical-align: top;
 }
 
+.fileItem{
+  height:40px;
+}
+
+.fileLink{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  display: inline-block;
+}
+
+.ant-form-item-control {
+  line-height: initial;
+}
