@@ -40,7 +40,7 @@ const renderFormItem = (item, editStatus, values, baseFieldName, Component, Comp
 };
 
 function MapApiToForms({
-                           form = {},
+                           form,
                            getForm = () => {},
                            bindFieldNames,
                            fieldsData = [],
@@ -50,14 +50,14 @@ function MapApiToForms({
                            formItemLayout,
                            onChange = () => {},
                            values,
-                           extra,
+                           extra = {},
                            listenersConfig = [],
                            selfRulesConfig = [],
                            disabledFormItems = [],
                            hiddenFormItems = [],
                        }) {
     getForm(form);
-    const {getFieldDecorator, getFieldsValue} = form;
+    const {getFieldDecorator, getFieldsValue} = form || {};
     const [newDisabledFormItems, setNewDisabledFormItems] = useState([]);
     const [newHiddenFormItems, setNewHiddenFormItems] = useState([]);
 
