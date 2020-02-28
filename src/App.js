@@ -12,6 +12,9 @@ import A7 from './examples/a7';
 import A8 from './examples/a8';
 import A9 from './examples/a9';
 import B1 from './examples/b1';
+import B2 from './examples/b2';
+import B3 from './examples/b3';
+import B4 from './examples/b4';
 
 function App() {
     return (
@@ -26,6 +29,9 @@ function App() {
             <Collapse.Panel header="示例：表单的 label 占比" key="a8"><A8/></Collapse.Panel>
             <Collapse.Panel header="示例：编辑/非编辑 状态" key="a9"><A9/></Collapse.Panel>
             <Collapse.Panel header="示例：自定义关联事件" key="b1"><B1/></Collapse.Panel>
+            <Collapse.Panel header="示例：自定义验证规则" key="b2"><B2/></Collapse.Panel>
+            <Collapse.Panel header="示例：自定义显示信息" key="b3"><B3/></Collapse.Panel>
+            <Collapse.Panel header="示例：自定义隐藏、自定义禁用" key="b4"><B4/></Collapse.Panel>
         </Collapse>
     );
 }

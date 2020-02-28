@@ -11,14 +11,6 @@ import Forms from '../component/Forms';
 
 export default function() {
     let formRef = {};
-    const [values, setValues] = useState({});
-    const [editStatus, setEditStatus] = useState(true);
-
-    function onChange(fieldsDataItem, value) {
-        console.log(fieldsDataItem, value);
-        setValues({...values, [fieldsDataItem.properties.bizFieldName]: value});
-        console.log(values);
-    }
 
     return (
         <div className="App">
