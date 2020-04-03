@@ -131,8 +131,8 @@ export default function (props) {
         Component = Form.create()(MapApiToForms);
     }
     return (
-        <div style={props.style} className="form_content">
+        <Form style={props.style} className="form_content">
             <Component {...props}/>
-        </div>
+        </Form>
     );
 }

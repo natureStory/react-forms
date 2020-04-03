@@ -11,16 +11,17 @@ import Forms from '../component/Forms';
 
 export default function() {
     let formRef = {};
-    const [values, setValues] = useState({});
+    const [columns, setColumns] = useState(2);
 
     return (
         <div className="App">
+            <p>输入列数：<input type="text" onChange={(e) => setColumns(Number(e.target.value) || 2)}/></p>
+            <p>指定 columns 为任意列即可</p>
             <Forms
                 getForm={form => formRef = form}    // 非受控模式，用于表单校验、取值
                 fieldsData={data}   // 接口表单数据
-                columns={2}     // 列数
+                columns={columns}     // 列数
             />
-            <p>指定 columns 为任意列即可</p>
         </div>
     );
 }
